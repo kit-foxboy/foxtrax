@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "prepare": "husky"
   },
   "dependencies": {
     "@nuxt/eslint": "1.16.0",
@@ -21,6 +22,11 @@
   "devDependencies": {
     "@antfu/eslint-config": "^9.1.0",
     "eslint-plugin-format": "^2.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.1.0",
     "typescript": "^6.0.3"
+  },
+  "lint-staged": {
+    "*": "bun lint"
   }
 }
