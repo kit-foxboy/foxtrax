@@ -1,4 +1,5 @@
 import antfu from "@antfu/eslint-config";
+import tailwind from "eslint-plugin-tailwindcss";
 // @ts-check
 import withNuxt from "./.nuxt/eslint.config.mjs";
 
@@ -22,4 +23,14 @@ export default withNuxt(
       "unicorn/filename-case": ["error", { case: "kebabCase", ignore: ["README.md"] }],
     },
   }),
+  /** @type {import('eslint-plugin-tailwindcss').PluginSettings} */
+  {
+    ...tailwind.configs.recommended,
+    files: ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,vue}"],
+    settings: {
+      tailwindcss: {
+        cssConfigPath: "./app/assets/css/main.css",
+      },
+    },
+  },
 );
