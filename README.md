@@ -39,3 +39,11 @@ Locally preview production build:
 # bun
 bun run preview
 ```
+
+## Attributions
+
+Project strongly inspired by w3cj's <a href="https://https://github.com/w3cj/nuxt-travel-log">Travel Log Project</a>
+
+### Photos
+
+<a href="https://www.vecteezy.com/free-photos/old-map">Old Map Stock photos by Vecteezy</a>
