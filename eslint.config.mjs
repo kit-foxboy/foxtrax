@@ -32,5 +32,8 @@ export default withNuxt(
         cssConfigPath: "./app/assets/css/main.css",
       },
     },
+    rules: {
+      "tailwindcss/no-custom-classname": ["warn", { whitelist: ["theme-controller"] }],
+    },
   },
 );

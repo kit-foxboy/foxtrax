@@ -14,15 +14,21 @@ function navigateHome() {
   <div class="min-h-dvh overflow-y-auto sm:grid sm:h-dvh sm:grid-rows-[auto_minmax(0,1fr)_auto] sm:overflow-hidden">
     <div class="navbar bg-neutral text-neutral-content">
       <div class="navbar-start">
-        <button class="btn btn-ghost text-xl" @click="navigateHome">
+        <button class="btn btn-neutral text-xl" @click="navigateHome">
           <Icon name="streamline-plump:pet-paw" class="-mt-2" size="24" />
           Foxtrax
           <Icon name="streamline-plump:pet-paw-solid" class="mt-2" size="24" />
         </button>
       </div>
       <div class="navbar-end">
+        <label class="flex cursor-pointer gap-2 mx-5">
+          <Icon name="streamline-plump:sun-remix" size="20" />
+          <input type="checkbox" value="garden" class="theme-controller toggle">
+          <Icon name="streamline-plump:moon-stars-remix" size="20" />
+        </label>
         <button class="btn btn-primary">
-          Login <Icon name="streamline-plump:login-1" size="18" />
+          Login
+          <Icon name="streamline-plump:login-1" size="18" />
         </button>
       </div>
     </div>
@@ -30,7 +36,9 @@ function navigateHome() {
       <slot />
     </main>
     <!-- TODO: Implement the footer as a seperate layout component if needed elsewhere -->
-    <footer class="footer flex flex-col-reverse items-center gap-8 bg-base-200 p-6 text-center text-base-content *:place-items-center sm:flex-row sm:items-start sm:justify-between sm:p-10 sm:text-left sm:*:place-items-start">
+    <footer
+      class="footer flex flex-col-reverse items-center gap-8 bg-base-200 p-6 text-center text-base-content *:place-items-center sm:flex-row sm:items-start sm:justify-between sm:p-10 sm:text-left sm:*:place-items-start"
+    >
       <aside>
         <NuxtLink to="/" class="btn flex items-center gap-2 btn-ghost text-4xl">
           <Icon name="streamline-plump:pet-paw" class="-mt-2" size="48" />
