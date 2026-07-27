@@ -6,7 +6,7 @@
       style="background-image: url('/images/hero-map.jpg')"
       data-fox-hero
     >
-      <div class="hero-overlay" />
+      <div class="hero-overlay bg-neutral/55" />
       <div data-fox-stage aria-hidden="true">
         <div data-fox-sprite />
       </div>
@@ -16,10 +16,10 @@
             Leave Your Pawprint!
           </h1>
           <p class="mb-5">
-            Let the world know about your travels or view desired destinations from others. The world awaits what keeps your paws moving.
+            Let the world know about your travels or view desired destinations from others. No email address required. The world awaits what keeps your paws moving!
           </p>
           <button class="btn btn-primary">
-            Get Started
+            Start Making Tracks
           </button>
         </div>
       </div>
@@ -64,6 +64,12 @@
   image-rendering: smooth;
   will-change: background-position;
   animation: fox-sprite-frames 1s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-fox-sprite] {
+    animation: none;
+  }
 }
 
 @media (max-width: 1200px) {
