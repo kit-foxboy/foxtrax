@@ -43,9 +43,9 @@ function navigateHome() {
     </main>
     <!-- TODO: Implement the footer as a seperate layout component if needed elsewhere -->
     <footer
-      class="footer place-items-center gap-8 bg-base-200 p-6 text-base-content sm:footer-horizontal sm:place-items-start sm:gap-6 sm:px-8 sm:py-5 sm:text-left sm:*:place-items-start"
+      class="footer max-sm:footer-center gap-8 bg-base-200 p-6 text-base-content sm:footer-horizontal sm:gap-6 sm:px-8 sm:py-5"
     >
-      <aside class="self-stretch">
+      <aside class="sm:self-center">
         <NuxtLink to="/" class="btn flex items-center gap-2 btn-ghost text-4xl">
           <Icon name="streamline-plump:pet-paw" class="-mt-2" size="48" />
           <p class="text-xl font-bold">

@@ -33,7 +33,7 @@ export default withNuxt(
       },
     },
     rules: {
-      "tailwindcss/no-custom-classname": ["warn", { whitelist: ["theme-controller"] }],
+      "tailwindcss/no-custom-classname": ["warn", { whitelist: ["theme-controller", "max-sm:footer-center"] }],
     },
   },
 );
