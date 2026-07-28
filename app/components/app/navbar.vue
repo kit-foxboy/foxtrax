@@ -26,9 +26,9 @@ function navigateHome() {
     </div>
     <div class="navbar-end min-w-0 gap-2">
       <AppThemeToggle />
-      <button class="btn btn-square btn-sm btn-primary sm:btn-md sm:w-auto sm:px-4" aria-label="Login coming soon" title="Login coming soon">
+      <button class="btn btn-square btn-sm btn-primary sm:btn-md sm:w-auto sm:px-4 max-sm:tooltip max-sm:tooltip-primary max-sm:tooltip-left" data-tip="Log In" aria-label="Login coming soon" title="Login coming soon">
         <span class="hidden sm:inline">Login</span>
-        <Icon name="streamline-plump:login-1" size="18" />
+        <Icon name="streamline-plump:log-solid" size="18" />
       </button>
     </div>
   </div>

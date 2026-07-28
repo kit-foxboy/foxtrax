@@ -22,7 +22,13 @@
             <span class="is-drawer-close:hidden">Locations</span>
           </NuxtLink>
         </li>
-        <li class="p-1 mt-5 border-t-base-100 border-t-2">
+        <li class="p-1">
+          <NuxtLink to="/locations/add" class="is-drawer-close:tooltip is-drawer-close:tooltip-right tooltip-primary" data-tip="Add Location">
+            <Icon name="streamline-plump:map-location-star-pin-remix" size="24" />
+            <span class="is-drawer-close:hidden">Add Location</span>
+          </NuxtLink>
+        </li>
+        <li class="p-1 pt-5 mt-5 border-t-base-100 border-t-2">
           <NuxtLink to="/#" class="is-drawer-close:tooltip is-drawer-close:tooltip-right tooltip-primary" data-tip="Log Out">
             <Icon name="streamline-plump:log" size="24" />
             <span class="is-drawer-close:hidden">Log Out</span>
