@@ -12,9 +12,15 @@ function onToggle(event: Event) {
 </script>
 
 <template>
-  <label class="swap swap-rotate mx-4">
-    <input :checked="isDark" type="checkbox" @change="onToggle">
-    <icon name="streamline-plump:sun-remix" class="swap-off" size="24" />
-    <icon name="streamline-plump:moon-stars-remix" class="swap-on" size="24" />
-  </label>
+  <ClientOnly>
+    <label class="swap swap-rotate mx-4">
+      <input :checked="isDark" type="checkbox" @change="onToggle">
+      <icon name="streamline-plump:sun-remix" class="swap-off" size="24" />
+      <icon name="streamline-plump:moon-stars-remix" class="swap-on" size="24" />
+    </label>
+
+    <template #fallback>
+      <div class="mx-4 size-6" />
+    </template>
+  </ClientOnly>
 </template>

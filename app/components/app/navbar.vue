@@ -13,8 +13,11 @@ function navigateHome() {
 <template>
   <div class="navbar gap-2 bg-neutral px-2 text-neutral-content sm:px-4">
     <div class="navbar-start min-w-0">
+      <label for="sidebar-drawer" aria-label="toggle sidebar" class="btn btn-ghost btn-sm btn-square lg:hidden">
+        <Icon class="is-drawer-open:text-accent" name="streamline-plump:line-arrow-expand-horizontal-remix" size="20" />
+      </label>
       <button class="btn btn-sm btn-neutral gap-1 text-lg sm:btn-md sm:gap-2 sm:text-xl" @click="navigateHome">
-        <Icon name="streamline-plump:pet-paw" class="" size="24" />
+        <Icon name="streamline-plump:pet-paw" size="24" />
         Foxtrax
         <span class="hidden sm:inline-flex">
           <Icon name="streamline-plump:pet-paw-solid" class="mt-2" size="24" />
