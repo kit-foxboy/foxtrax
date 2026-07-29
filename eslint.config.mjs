@@ -15,12 +15,14 @@ export default withNuxt(
       quotes: "double",
     },
     rules: {
+      "@typescript-eslint/no-redeclare": "off",
       "ts/consistent-type-definitions": ["error", "type"],
       "no-console": ["warn"],
       "antfu/no-top-level-await": "off",
       "node/prefer-global/process": "off",
       "perfectionist/sort-imports": ["error"],
       "unicorn/filename-case": ["error", { case: "kebabCase", ignore: ["README.md"] }],
+      "node/no-process-env": ["error"],
     },
   }),
   /** @type {import('eslint-plugin-tailwindcss').PluginSettings} */
