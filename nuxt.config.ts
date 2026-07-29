@@ -21,10 +21,6 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  nitro: {
-    preset: "bun",
-    node: true,
-  },
   colorMode: {
     dataValue: "theme",
   },
