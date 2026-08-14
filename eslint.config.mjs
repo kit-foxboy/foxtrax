@@ -1,4 +1,5 @@
 import antfu from "@antfu/eslint-config";
+import drizzle from "eslint-plugin-drizzle";
 import tailwind from "eslint-plugin-tailwindcss";
 // @ts-check
 import withNuxt from "./.nuxt/eslint.config.mjs";
@@ -9,6 +10,7 @@ export default withNuxt(
     typescript: true,
     formatters: true,
     vue: true,
+    ignores: ["node_modules", "app/utils/db/migrations"],
     stylistic: {
       indent: 2,
       semi: true,
@@ -25,6 +27,12 @@ export default withNuxt(
       "node/no-process-env": ["error"],
     },
   }),
+  {
+    plugins: {
+      drizzle,
+    },
+    rules: drizzle.configs.recommended.rules,
+  },
   /** @type {import('eslint-plugin-tailwindcss').PluginSettings} */
   {
     ...tailwind.configs.recommended,
