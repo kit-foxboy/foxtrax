@@ -1,10 +1,11 @@
 import { integer, snakeCase, text } from "drizzle-orm/sqlite-core";
-import { timestamps } from "../common";
-import { locationLog } from "./location-log.sql";
 
-export const locationLogImage = snakeCase.table("location_log_image", {
+import { timestamps } from "../common";
+import { feature } from "./feature.sql";
+
+export const FeatureImage = snakeCase.table("feature_image", {
   id: integer().primaryKey({ autoIncrement: true }),
+  FeatureId: integer().notNull().references(() => feature.id),
   key: text().notNull(),
-  locationLogId: integer().notNull().references(() => locationLog.id),
   ...timestamps,
 });

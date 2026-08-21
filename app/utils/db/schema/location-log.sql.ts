@@ -3,11 +3,11 @@ import { integer, snakeCase } from "drizzle-orm/sqlite-core";
 import { timestamps } from "../common";
 import { location } from "./location.sql";
 
-export const locationLog = snakeCase.table("locationLog", {
+export const locationLog = snakeCase.table("location_log", {
   id: integer().primaryKey({ autoIncrement: true }),
   locationId: integer().notNull().references(() => location.id),
-  startedAt: integer().default(0),
-  endedAt: integer().default(0),
-  approximate: integer({ mode: "boolean" }).default(true),
+  startedVisitAt: integer().default(0),
+  endedVisitAt: integer().default(0),
+  isApproximate: integer({ mode: "boolean" }).default(true),
   ...timestamps,
 });
