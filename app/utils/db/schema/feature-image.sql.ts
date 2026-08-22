@@ -5,7 +5,8 @@ import { feature } from "./feature.sql";
 
 export const FeatureImage = snakeCase.table("feature_image", {
   id: integer().primaryKey({ autoIncrement: true }),
-  FeatureId: integer().notNull().references(() => feature.id),
+  userId: integer().notNull().references(() => feature.userId),
+  featureId: integer().notNull().references(() => feature.id),
   key: text().notNull(),
   ...timestamps,
 });
