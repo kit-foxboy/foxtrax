@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@nuxtjs/color-mode",
+    "@pinia/nuxt",
   ],
   css: ["~/assets/css/main.css"],
   eslint: {
