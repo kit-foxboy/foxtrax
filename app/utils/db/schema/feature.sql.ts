@@ -1,7 +1,7 @@
 import { integer, snakeCase, text } from "drizzle-orm/sqlite-core";
 
 import { timestamps } from "../common";
-import { user } from "./auth";
+import { user } from "./auth.sql";
 import { category } from "./category.sql";
 import { locationLog } from "./location-log.sql";
 

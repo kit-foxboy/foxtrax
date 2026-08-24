@@ -1,6 +1,6 @@
 import { foreignKey, integer, snakeCase, text } from "drizzle-orm/sqlite-core";
 
-import { user } from "./auth";
+import { user } from "./auth.sql";
 import { locationLog } from "./location-log.sql";
 
 export const comment = snakeCase.table("comment", {

@@ -1,7 +1,7 @@
 import { integer, snakeCase } from "drizzle-orm/sqlite-core";
 
 import { timestamps } from "../common";
-import { user } from "./auth";
+import { user } from "./auth.sql";
 import { location } from "./location.sql";
 
 export const locationLog = snakeCase.table("location_log", {

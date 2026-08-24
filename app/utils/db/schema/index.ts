@@ -1,4 +1,4 @@
-export * from "./auth";
+export * from "./auth.sql";
 export * from "./category.sql";
 export * from "./comment.sql";
 export * from "./feature-image.sql";
