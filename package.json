@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "concurrently \"nuxt dev\" \"bun run dev:db\"",
-    "dev:db": "turso dev --db-file local.db",
+    "dev": "nuxt dev",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "bun scripts/db-migrate.ts",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -14,6 +15,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@better-auth/drizzle-adapter": "^1.7.1",
     "@nuxt/eslint": "1.16.0",
     "@nuxt/icon": "2.3.1",
     "@nuxt/image": "2.0.0",
@@ -22,9 +24,9 @@
     "@tailwindcss/vite": "^4.3.3",
     "@tursodatabase/sync": "^0.7.2",
     "better-auth": "^1.7.1",
-    "concurrently": "^10.0.4",
     "drizzle-orm": "^1.0.0-rc.4",
     "eslint": "^9.0.0 || ^10.0.0",
+    "neverthrow": "^8.2.0",
     "nuxt": "^4.4.8",
     "pinia": "^4.0.3",
     "tailwindcss": "^4.3.3",
@@ -42,6 +44,7 @@
     "drizzle-kit": "^1.0.0-rc.4",
     "eslint-plugin-drizzle": "^0.2.3",
     "eslint-plugin-format": "^2.0.1",
+    "eslint-plugin-neverthrow": "^1.1.4",
     "eslint-plugin-tailwindcss": "^4.2.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.1.0",
