@@ -4,7 +4,6 @@ const props = withDefaults(defineProps<{ method?: LoginMethodKey }>(), {
 });
 
 const authStore = useAuthStore();
-const { goToDashboard } = useNavigation();
 
 type LoginMethod = {
   login: () => void;
@@ -29,13 +28,9 @@ const methodMap = {
 
 const activeMethod = computed(() => methodMap[props.method]);
 
-async function handleLogin() {
-  const result = await activeMethod.value.login();
-  if (result.isErr()) {
-    console.error(result.error.message); // Replace with a proper user-facing error (toast or something)
-    return;
-  }
-  await goToDashboard();
+// Invoke the login method for the active authentication method
+function handleLogin() {
+  activeMethod.value.login();
 }
 </script>
 
