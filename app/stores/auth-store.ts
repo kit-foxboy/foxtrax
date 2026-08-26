@@ -1,14 +1,13 @@
 import type { Result } from "neverthrow";
 
-import { createAuthClient } from "better-auth/client";
 import { anonymousClient } from "better-auth/client/plugins";
+import { createAuthClient } from "better-auth/vue";
 import { errAsync, okAsync, ResultAsync } from "neverthrow";
 
 const authClient = createAuthClient({
   plugins: [
     anonymousClient(),
   ],
-  callbackURL: "/dashboard", // TODO: make this more dynamic if needed
 });
 
 class AuthError extends Error {
@@ -23,6 +22,11 @@ class AuthError extends Error {
 export const useAuthStore = defineStore("useAuthStore", () => {
   const loading = ref(false);
   const authError: Ref<AuthError | null> = ref(null);
+
+  // Reactive better-auth session; kept internal because it holds non-serializable fns (refetch) that break SSR payload devalue. Expose only derived, serializable state.
+  const session = authClient.useSession();
+  const isAuthenticated = computed(() => (session.value.data?.user ?? null) !== null);
+  const user = computed(() => session.value.data?.user ?? null);
 
   async function loginAnon(): Promise<Result<void, AuthError>> {
     loading.value = true;
@@ -46,6 +50,8 @@ export const useAuthStore = defineStore("useAuthStore", () => {
   return {
     loading,
     authError,
+    isAuthenticated,
+    user,
     loginAnon,
   };
 });
