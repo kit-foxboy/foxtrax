@@ -20,7 +20,7 @@ const methodMap = {
     label: "Log in as guest",
   },
   github: {
-    login: authStore.loginAnon, // Temporary placeholder for GitHub login
+    login: authStore.loginGithub,
     icon: "tabler:brand-github",
     label: "Log in with GitHub",
   },
@@ -36,7 +36,8 @@ function handleLogin() {
 
 <template>
   <button class="btn btn-primary" :disabled="authStore.loading" @click="handleLogin">
-    <Icon :name="activeMethod.icon" size="24" />
+    <span v-if="authStore.loading" class="loading loading-spinner loading-md" />
+    <Icon v-else :name="activeMethod.icon" size="32" />
     {{ activeMethod.label }}
   </button>
 </template>

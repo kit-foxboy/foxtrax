@@ -1,4 +1,8 @@
 <script setup lang="ts">
+definePageMeta({
+  middleware: "login-middleware",
+});
+
 const showLogin = ref(true);
 const loginClass = computed(() => showLogin.value ? "btn-primary" : "btn-outline");
 const signUpClass = computed(() => !showLogin.value ? "btn-primary" : "btn-outline");
@@ -9,6 +13,7 @@ function toggleLogin(show: boolean) {
 
 <template>
   <div class="flex justify-center items-center min-h-screen bg-cover bg-center sm:h-full sm:min-h-0">
+    <!-- TODO: Tweak margins/padding and consider making buttons stack vertically -->
     <div class="card bg-base-300 card-xl min-h-90 shadow-sm">
       <div class="card-body">
         <h2 class="card-title mb-4">

@@ -30,6 +30,14 @@ export const useAuthStore = defineStore("useAuthStore", () => {
 
   const { goToDashboard } = useNavigation();
 
+  // Awaits a fresh session check instead of reading the reactive `session` ref directly.
+  // Needed in middleware: on a hard refresh the store is newly created, and `session`'s
+  // background fetch hasn't resolved yet, so `isAuthenticated` would still read stale/initial data.
+  async function fetchIsAuthenticated(): Promise<boolean> {
+    const { data } = await authClient.getSession();
+    return (data?.user ?? null) !== null;
+  }
+
   async function loginAnon(): Promise<Result<void, AuthError>> {
     loading.value = true;
 
@@ -58,11 +66,29 @@ export const useAuthStore = defineStore("useAuthStore", () => {
 
     return result;
   }
+
+  async function loginGithub() {
+    loading.value = true;
+
+    // Causes a redirrect to the GitHub OAuth flow, which will redirect back to the callback URL on success or error callback URL on failure.
+    // We don't need any return data or neverthrow handling here, as the user will be redirected away from the page no matter what happens.
+    await authClient.signIn.social({
+      provider: "github",
+      callbackURL: "/dashboard",
+      errorCallbackURL: "/auth/error",
+    });
+
+    // which means technically this is unreachable but still seems like good form
+    loading.value = false;
+  }
+
   return {
     loading,
     authError,
     isAuthenticated,
     user,
+    fetchIsAuthenticated,
     loginAnon,
+    loginGithub,
   };
 });
