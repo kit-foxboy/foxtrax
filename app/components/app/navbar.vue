@@ -10,8 +10,8 @@ function navigateHome() {
 }
 
 function navigateLogin() {
-  if (router.currentRoute.value.path !== "/login") {
-    router.push("/login");
+  if (router.currentRoute.value.path !== "/auth/login") {
+    router.push("/auth/login");
   }
 }
 </script>

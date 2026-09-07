@@ -5,8 +5,8 @@ import { useRouter } from "vue-router";
 function navigateLogin() {
   const router = useRouter();
 
-  if (router.currentRoute.value.path !== "/login") {
-    router.push("/login");
+  if (router.currentRoute.value.path !== "/auth/login") {
+    router.push("/auth/login");
   }
 }
 </script>

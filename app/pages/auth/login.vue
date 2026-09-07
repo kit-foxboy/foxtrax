@@ -30,10 +30,12 @@ function toggleLogin(show: boolean) {
           Choose how you want to log in or sign up.<br>
           A guest account can be upgraded to a full account later at any time.
         </p>
-        <div class="justify-center card-actions">
+        <div v-if="showLogin" class="justify-center card-actions">
           <AuthButton method="anonymous" />
           <AuthButton method="github" />
         </div>
+        <!-- TODO: Implement email/password authentication -->
+        <AuthSignUpForm v-else />
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 export function useNavigation() {
   return {
     goToHome: () => navigateTo("/"),
-    goToLogin: () => navigateTo("/login"),
+    goToLogin: () => navigateTo("/auth/login"),
     goToDashboard: () => navigateTo("/dashboard"),
   };
 }
