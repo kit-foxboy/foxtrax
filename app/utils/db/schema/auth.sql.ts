@@ -15,8 +15,8 @@ export const user = snakeCase.table("user", {
     .default(false)
     .notNull(),
   image: text(),
-  createdAt: integer().notNull().$default(() => Date.now()),
-  updatedAt: integer().notNull().$default(() => Date.now()).$onUpdate(() => Date.now()),
+  createdAt: integer({ mode: "timestamp_ms" }).notNull().$default(() => new Date()),
+  updatedAt: integer({ mode: "timestamp_ms" }).notNull().$default(() => new Date()).$onUpdate(() => new Date()),
   isAnonymous: integer({ mode: "boolean" }).default(false),
 });
 
@@ -24,10 +24,10 @@ export const session = snakeCase.table(
   "session",
   {
     id: integer().primaryKey({ autoIncrement: true }),
-    expiresAt: integer().notNull(),
+    expiresAt: integer({ mode: "timestamp_ms" }).notNull(),
     token: text().notNull().unique(),
-    createdAt: integer().notNull().$default(() => Date.now()),
-    updatedAt: integer().notNull().$default(() => Date.now()).$onUpdate(() => Date.now()),
+    createdAt: integer({ mode: "timestamp_ms" }).notNull().$default(() => new Date()),
+    updatedAt: integer({ mode: "timestamp_ms" }).notNull().$default(() => new Date()).$onUpdate(() => new Date()),
     ipAddress: text(),
     userAgent: text(),
     userId: integer()
@@ -54,8 +54,8 @@ export const account = snakeCase.table(
     refreshTokenExpiresAt: integer(),
     scope: text(),
     password: text(),
-    createdAt: integer().notNull().$default(() => Date.now()),
-    updatedAt: integer().notNull().$default(() => Date.now()).$onUpdate(() => Date.now()),
+    createdAt: integer({ mode: "timestamp_ms" }).notNull().$default(() => new Date()),
+    updatedAt: integer({ mode: "timestamp_ms" }).notNull().$default(() => new Date()).$onUpdate(() => new Date()),
   },
   table => [
     uniqueIndex("account_issuer_accountId_uidx").on(
@@ -72,9 +72,9 @@ export const verification = snakeCase.table(
     id: integer().primaryKey({ autoIncrement: true }),
     identifier: text().notNull(),
     value: text().notNull(),
-    expiresAt: integer().notNull(),
-    createdAt: integer().notNull().$default(() => Date.now()),
-    updatedAt: integer().notNull().$default(() => Date.now()).$onUpdate(() => Date.now()),
+    expiresAt: integer({ mode: "timestamp_ms" }).notNull(),
+    createdAt: integer({ mode: "timestamp_ms" }).notNull().$default(() => new Date()),
+    updatedAt: integer({ mode: "timestamp_ms" }).notNull().$default(() => new Date()).$onUpdate(() => new Date()),
   },
   table => [index("verification_identifier_idx").on(table.identifier)],
 );
