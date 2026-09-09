@@ -1,11 +1,11 @@
 import { drizzleAdapter } from "@better-auth/drizzle-adapter";
-import { betterAuth } from "better-auth";
+import { defineServerAuth } from "@nuxtjs/better-auth/config";
 import { anonymous } from "better-auth/plugins";
+import db from "~/utils/db";
 import { account, session, user, verification } from "~/utils/db/schema/auth.sql";
 import env from "~/utils/env";
-import db from "./db";
 
-export const auth = betterAuth({
+export default defineServerAuth({
   database: drizzleAdapter(db, {
     provider: "sqlite",
     schema: {

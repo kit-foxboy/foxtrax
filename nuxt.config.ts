@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@nuxtjs/color-mode",
-    "@pinia/nuxt",
+    "@nuxtjs/better-auth",
   ],
   css: ["~/assets/css/main.css"],
   eslint: {
@@ -24,5 +24,16 @@ export default defineNuxtConfig({
   },
   colorMode: {
     dataValue: "theme",
+  },
+  auth: {
+    redirects: {
+      login: "/auth/login",
+      guest: "/dashboard",
+      authenticated: "/dashboard",
+    },
+  },
+  routeRules: {
+    "/dashboard/**": { auth: { only: "user", redirectTo: "/auth/login" } },
+    "/auth/login": { auth: { only: "guest", redirectTo: "/dashboard" } },
   },
 });

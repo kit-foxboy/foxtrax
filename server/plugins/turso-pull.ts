@@ -1,4 +1,4 @@
-import db, { ensureConnected } from "../utils/db";
+import db, { ensureConnected } from "~/utils/db";
 
 const ERROR_RETRY_DELAY_MS = 5_000;
 

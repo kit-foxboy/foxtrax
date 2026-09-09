@@ -1,8 +1,4 @@
 <script setup lang="ts">
-definePageMeta({
-  middleware: "login-middleware",
-});
-
 const showLogin = ref(true);
 const loginClass = computed(() => showLogin.value ? "btn-primary" : "btn-outline");
 const signUpClass = computed(() => !showLogin.value ? "btn-primary" : "btn-outline");

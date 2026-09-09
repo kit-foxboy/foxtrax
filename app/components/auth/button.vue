@@ -3,40 +3,33 @@ const props = withDefaults(defineProps<{ method?: LoginMethodKey }>(), {
   method: "anonymous",
 });
 
-const authStore = useAuthStore();
+type LoginMethodKey = "anonymous" | "github";
 
-type LoginMethod = {
-  login: () => void;
-  icon: string;
-  label: string;
-};
-
-type LoginMethodKey = keyof typeof methodMap;
+const signInAnonymous = useSignIn("anonymous");
+const signInSocial = useSignIn("social");
 
 const methodMap = {
   anonymous: {
-    login: authStore.loginAnon,
+    execute: () => signInAnonymous.execute(),
+    status: signInAnonymous.status,
     icon: "streamline-plump:theater-mask-solid",
     label: "Log in as guest",
   },
   github: {
-    login: authStore.loginGithub,
+    execute: () => signInSocial.execute({ provider: "github", errorCallbackURL: "/auth/error" }),
+    status: signInSocial.status,
     icon: "tabler:brand-github",
     label: "Log in with GitHub",
   },
-} satisfies Record<string, LoginMethod>;
+} as const;
 
 const activeMethod = computed(() => methodMap[props.method]);
-
-// Invoke the login method for the active authentication method
-function handleLogin() {
-  activeMethod.value.login();
-}
+const isPending = computed(() => activeMethod.value.status.value === "pending");
 </script>
 
 <template>
-  <button class="btn btn-primary" :disabled="authStore.loading" @click="handleLogin">
-    <span v-if="authStore.loading" class="loading loading-spinner loading-md" />
+  <button class="btn btn-primary" :disabled="isPending" @click="activeMethod.execute">
+    <span v-if="isPending" class="loading loading-spinner loading-md" />
     <Icon v-else :name="activeMethod.icon" size="32" />
     {{ activeMethod.label }}
   </button>
