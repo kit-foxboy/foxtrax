@@ -43,7 +43,7 @@ export default withNuxt(
       },
     },
     rules: {
-      "tailwindcss/no-custom-classname": ["warn", { whitelist: ["theme-controller", "max-sm:footer-center", "swap-on", "swap-off"] }],
+      "tailwindcss/no-custom-classname": ["warn", { whitelist: ["theme-controller", "max-sm:footer-center", "swap-on", "swap-off", "dropdown-content"] }],
     },
   },
 );
