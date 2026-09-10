@@ -15,6 +15,9 @@ export default defineServerAuth({
       verification,
     },
   }),
+  emailAndPassword: {
+    enabled: true,
+  },
   plugins: [anonymous({
     generateName: () => {
       return `Guest ${crypto.randomUUID()}`;
@@ -23,6 +26,7 @@ export default defineServerAuth({
       // TODO: Transfer any data from the anonymous user to the linked account
       // The anonymous user will be deleted after this function is called,
       // so ensure that all tables with a user_id get updated to the new user's id before this function returns.
+      console.error("Unimplemented function onLinkAccount, deferring until schema is more battle-tested");
     },
   })],
   socialProviders: {

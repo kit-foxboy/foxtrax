@@ -30,7 +30,6 @@ function toggleLogin(show: boolean) {
           <AuthButton method="anonymous" />
           <AuthButton method="github" />
         </div>
-        <!-- TODO: Implement email/password authentication -->
         <AuthSignUpForm v-else />
       </div>
     </div>

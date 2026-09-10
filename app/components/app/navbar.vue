@@ -10,6 +10,10 @@ function getUserInitials() {
     return "";
   }
 
+  if (user.name.includes("Guest")) {
+    return "Guest";
+  }
+
   const names = user.name.split(" ");
   if (names.length === 1) {
     return user.name.charAt(0) + user.name.charAt(1);
@@ -69,6 +73,11 @@ function navigateLogin() {
         <ul tabindex="0" class="dropdown-content menu bg-base-200 rounded-box w-52 z-1 p-2 shadow-sm">
           <!-- <li><a href="/profile">Profile</a></li>
           <li><a href="/settings">Settings</a></li> -->
+          <li v-if="user?.isAnonymous">
+            <NuxtLink to="/auth/upgrade-account" class="btn btn-link">
+              Upgrade Account
+            </NuxtLink>
+          </li>
           <li>
             <NuxtLink to="/auth/logout" class="btn btn-link">
               Logout
