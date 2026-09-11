@@ -1,5 +1,5 @@
 import { defineConfig } from "drizzle-kit";
-import env from "./app/utils/env";
+import env from "./app/utils/env/server";
 
 import "dotenv/config";
 

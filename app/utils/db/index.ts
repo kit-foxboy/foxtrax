@@ -1,6 +1,6 @@
 import { drizzle } from "drizzle-orm/tursodatabase-sync";
 
-import env from "~/utils/env";
+import env from "~/utils/env/server";
 
 // Reads/writes hit the local database file first; cloud sync automatically happens via push/pull plugins.
 const db = drizzle({

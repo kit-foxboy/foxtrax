@@ -1,7 +1,7 @@
 import { drizzle } from "drizzle-orm/tursodatabase-sync";
 import { migrate } from "drizzle-orm/tursodatabase-sync/migrator";
 
-import env from "../app/utils/env";
+import env from "../app/utils/env/server";
 
 // Applies pending migrations through the sync engine (captured as CDC ops),
 // then pushes them to the remote Turso Cloud database for this environment.

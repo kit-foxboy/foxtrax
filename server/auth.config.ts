@@ -3,9 +3,10 @@ import { defineServerAuth } from "@nuxtjs/better-auth/config";
 import { anonymous } from "better-auth/plugins";
 import db from "~/utils/db";
 import { account, session, user, verification } from "~/utils/db/schema/auth.sql";
-import env from "~/utils/env";
+import { authConfig } from "./utils/auth-env";
 
 export default defineServerAuth({
+  secret: authConfig.secret,
   database: drizzleAdapter(db, {
     provider: "sqlite",
     schema: {
@@ -31,8 +32,8 @@ export default defineServerAuth({
   })],
   socialProviders: {
     github: {
-      clientId: env.AUTH_GITHUB_CLIENT_ID,
-      clientSecret: env.AUTH_GITHUB_CLIENT_SECRET,
+      clientId: authConfig.github.clientId,
+      clientSecret: authConfig.github.clientSecret,
     },
   },
   advanced: {
