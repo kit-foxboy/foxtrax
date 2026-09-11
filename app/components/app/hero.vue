@@ -1,3 +1,16 @@
+<script setup lang="ts">
+// TODO: refactor navigation functions into a composable or utility to avoid duplication
+import { useRouter } from "vue-router";
+
+function navigateLogin() {
+  const router = useRouter();
+
+  if (router.currentRoute.value.path !== "/auth/login") {
+    router.push("/auth/login");
+  }
+}
+</script>
+
 <template>
   <div
     class="hero min-h-screen bg-cover bg-center sm:h-full sm:min-h-0"
@@ -17,7 +30,7 @@
           <p class="mb-5">
             Let the world know about your travels or view desired destinations from others. No email address required. The world awaits what keeps your paws moving!
           </p>
-          <button class="btn btn-primary">
+          <button class="btn btn-primary" @click="navigateLogin">
             Start Making Tracks
           </button>
         </slot>

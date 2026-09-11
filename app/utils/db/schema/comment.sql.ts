@@ -1,9 +1,11 @@
 import { foreignKey, integer, snakeCase, text } from "drizzle-orm/sqlite-core";
 
+import { user } from "./auth.sql";
 import { locationLog } from "./location-log.sql";
 
 export const comment = snakeCase.table("comment", {
   id: integer().primaryKey({ autoIncrement: true }),
+  userId: integer().notNull().references(() => user.id),
   replyToId: integer().default(0),
   locationLogId: integer().notNull().references(() => locationLog.id),
   content: text().notNull(),

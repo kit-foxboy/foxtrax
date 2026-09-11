@@ -17,7 +17,7 @@ export default function tryParseEnv<T extends ZodRawShape>(
   }
   catch (error) {
     if (error instanceof ZodError) {
-      let message = "Missing required values in .env\:\n";
+      let message = "Missing required values in .env:\n";
       error.issues.forEach((issue) => {
         message += `${issue.path[0]?.toString()}\n`;
       });
@@ -26,5 +26,7 @@ export default function tryParseEnv<T extends ZodRawShape>(
       fmtError.stack = "";
       throw fmtError;
     }
+
+    throw error;
   }
 }

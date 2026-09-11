@@ -1,5 +1,5 @@
 <template>
   <NuxtLayout>
-    <AppHero />
+    <NuxtPage />
   </NuxtLayout>
 </template>
