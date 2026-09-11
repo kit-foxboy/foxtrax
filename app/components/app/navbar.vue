@@ -52,7 +52,7 @@ function navigateLogin() {
     </div>
     <div class="navbar-end min-w-0 gap-2">
       <AppThemeToggle />
-      <button v-if="!session.loggedIn" class="btn btn-square btn-sm btn-primary sm:btn-md sm:w-auto sm:px-4 max-sm:tooltip max-sm:tooltip-primary max-sm:tooltip-left" data-tip="Log In" aria-label="Login coming soon" title="Login coming soon" @click="navigateLogin">
+      <button v-if="!session.loggedIn.value" class="btn btn-square btn-sm btn-primary sm:btn-md sm:w-auto sm:px-4 max-sm:tooltip max-sm:tooltip-primary max-sm:tooltip-left" data-tip="Log In" aria-label="Login coming soon" title="Login coming soon" @click="navigateLogin">
         <span class="hidden sm:inline">Login</span>
         <Icon name="streamline-plump:log-solid" size="18" />
       </button>
