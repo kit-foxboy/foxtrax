@@ -12,7 +12,7 @@
         "@nuxtjs/better-auth": "0.3.1",
         "@nuxtjs/color-mode": "4.0.1",
         "@tailwindcss/vite": "^4.3.3",
-        "@tursodatabase/sync": "^0.7.2",
+        "@tursodatabase/serverless": "^1.4.0",
         "better-auth": "^1.7.1",
         "drizzle-orm": "^1.0.0-rc.4",
         "eslint": "^9.0.0 || ^10.0.0",
@@ -718,7 +718,7 @@
 
     "@tursodatabase/database-win32-x64-msvc": ["@tursodatabase/database-win32-x64-msvc@0.7.2", "", { "os": "win32", "cpu": "x64" }, "sha512-AUvN3KO1bZOpsXVofRIMM2+MJ6OghUhgK62t8/3Bsb0Zzt6PztaMvJrtaWI6u5Olx0WCfGdhaVKyegcjYPNAeA=="],
 
-    "@tursodatabase/serverless": ["@tursodatabase/serverless@0.2.4", "", {}, "sha512-kqf3FINvTGx8N1iH/4e1Dkbr/om5q9qitshzvljtQXwZFQIsVP/mDE76mGg9U2dg/ElOZKFKtT1VXDgd39Dr1w=="],
+    "@tursodatabase/serverless": ["@tursodatabase/serverless@1.4.0", "", {}, "sha512-ZU3T76NG/E0NTKULqJ9TggJfbdPgRaChOS4HDOu3Srds7w7fSPie7jbPHzz+CLGrxs2TtMYtYB1lH5Bh6q1w7A=="],
 
     "@tursodatabase/sync": ["@tursodatabase/sync@0.7.2", "", { "dependencies": { "@tursodatabase/database-common": "^0.7.2", "@tursodatabase/sync-common": "^0.7.2" }, "optionalDependencies": { "@tursodatabase/sync-darwin-arm64": "0.7.2", "@tursodatabase/sync-linux-arm64-gnu": "0.7.2", "@tursodatabase/sync-linux-x64-gnu": "0.7.2", "@tursodatabase/sync-win32-x64-msvc": "0.7.2" } }, "sha512-qGfywPShGgx5luHzY4WOHTJNvkLj8b6ZNFuzw+AbMpUho6XB3E3titcINdqlogJcLrjDR1ripQjylIbPpqJKyg=="],
 
@@ -2309,6 +2309,8 @@
     "@tailwindcss/oxide-wasm32-wasi/@tybys/wasm-util": ["@tybys/wasm-util@0.10.3", "", { "dependencies": { "tslib": "^2.4.0" }, "bundled": true }, "sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg=="],
 
     "@tailwindcss/oxide-wasm32-wasi/tslib": ["tslib@2.8.1", "", { "bundled": true }, "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="],
+
+    "@tursodatabase/sync-common/@tursodatabase/serverless": ["@tursodatabase/serverless@0.2.4", "", {}, "sha512-kqf3FINvTGx8N1iH/4e1Dkbr/om5q9qitshzvljtQXwZFQIsVP/mDE76mGg9U2dg/ElOZKFKtT1VXDgd39Dr1w=="],
 
     "@tybys/wasm-util/tslib": ["tslib@2.8.1", "", {}, "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="],
 

@@ -22,7 +22,7 @@
     "@nuxtjs/better-auth": "0.3.1",
     "@nuxtjs/color-mode": "4.0.1",
     "@tailwindcss/vite": "^4.3.3",
-    "@tursodatabase/sync": "^0.7.2",
+    "@tursodatabase/serverless": "^1.4.0",
     "better-auth": "^1.7.1",
     "drizzle-orm": "^1.0.0-rc.4",
     "eslint": "^9.0.0 || ^10.0.0",
