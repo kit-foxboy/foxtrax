@@ -3,7 +3,6 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 const session = useUserSession();
-console.warn(session.loggedIn.value);
 const user = session.user?.value;
 
 function getUserInitials() {
