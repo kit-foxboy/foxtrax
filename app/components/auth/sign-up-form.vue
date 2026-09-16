@@ -6,6 +6,8 @@ const confirmPassword = ref("");
 
 const signUpEmail = useSignUp("email");
 const isPending = computed(() => signUpEmail.status.value === "pending");
+
+useAuthErrorRedirect(signUpEmail.error);
 const passwordMismatch = computed(() => confirmPassword.value.length > 0 && password.value !== confirmPassword.value);
 
 type NameAvailability = "idle" | "checking" | "available" | "taken" | "error";

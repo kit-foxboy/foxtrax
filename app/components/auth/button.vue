@@ -8,6 +8,9 @@ type LoginMethodKey = "anonymous" | "github";
 const signInAnonymous = useSignIn("anonymous");
 const signInSocial = useSignIn("social");
 
+useAuthErrorRedirect(signInAnonymous.error);
+useAuthErrorRedirect(signInSocial.error);
+
 const methodMap = {
   anonymous: {
     execute: () => signInAnonymous.execute(),

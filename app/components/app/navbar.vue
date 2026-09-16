@@ -80,6 +80,7 @@ function navigateLogin() {
           </li>
           <li>
             <NuxtLink to="/auth/logout" class="btn btn-link">
+              <Icon name="streamline-plump:log" size="24" class="mr-2" />
               Logout
             </NuxtLink>
           </li>
