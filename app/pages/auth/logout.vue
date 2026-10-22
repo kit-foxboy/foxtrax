@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const client = useAuthClient();
-let clientError = null;
+const clientError = ref<unknown>(null);
 onMounted(async () => {
   try {
     if (!client) {
@@ -10,7 +10,7 @@ onMounted(async () => {
     navigateTo("/farewell");
   }
   catch (error) {
-    clientError = error;
+    clientError.value = error;
   }
 });
 </script>
